@@ -10,7 +10,6 @@ import 'package:alzeena/Widgets/SearchField.dart';
 import 'package:alzeena/Widgets/SubCategoryCard.dart';
 import 'package:alzeena/Widgets/TitleText.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
 
 class MyHomePage extends StatefulWidget {
