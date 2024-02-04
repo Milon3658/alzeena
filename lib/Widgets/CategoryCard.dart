@@ -28,9 +28,7 @@ class CategoryCard extends StatelessWidget {
             child: Image(
                 height: 100,
                 width: 120,
-                image: NetworkImage(
-                  image
-                )),
+                image: AssetImage(image)),
           ),
           Text(title, style: const TextStyle(
             fontSize: 16

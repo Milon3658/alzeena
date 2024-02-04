@@ -3,6 +3,7 @@ import 'package:alzeena/Core/Links.dart';
 import 'package:alzeena/Widgets/CategoryCard.dart';
 import 'package:alzeena/Widgets/HomePageCarousel.dart';
 import 'package:alzeena/Widgets/SearchField.dart';
+import 'package:alzeena/Widgets/SubCategoryCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
@@ -80,10 +81,10 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 CategoryCard(
                   title: 'Mens',
-                  image: mensImage,
+                  image: 'assets/mens.jpeg',
                 ),
-                CategoryCard(title: 'Women', image: mensImage),
-                CategoryCard(title: 'Kids', image: mensImage),
+                CategoryCard(title: 'Women', image: 'assets/women.avif'),
+                CategoryCard(title: 'Kids', image: 'assets/kids.jpeg'),
               ],
             ),
             const Gap(10),
@@ -94,10 +95,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   style: TextStyle(fontSize: 18),
                 )),
             const Gap(10),
-            Row(
-              children: [
-
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  SubCategoryCard(title: 'Hoodie', image: 'assets/hoodie.avif'),
+                  SubCategoryCard(title: 'Jacket', image: 'assets/jacket.jpeg'),
+                  SubCategoryCard(title: 'Pants', image: 'assets/pants.jpeg'),
+                  SubCategoryCard(title: 'Shirt', image: 'assets/shirt.jpeg'),
+                  SubCategoryCard(title: 'Tops', image: 'assets/tops.avif'),
+                ],
+              ),
             )
           ],
         ),
