@@ -232,6 +232,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
+              const Gap(10),
+              const NewCollectionBannar(),
               const Gap(100),
             ],
           ),
