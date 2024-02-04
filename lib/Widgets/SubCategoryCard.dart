@@ -23,7 +23,7 @@ class SubCategoryCard extends StatelessWidget {
           ),
         ),
         const Gap(5),
-        Text(title)
+        Text(title),
       ],
     );
   }
