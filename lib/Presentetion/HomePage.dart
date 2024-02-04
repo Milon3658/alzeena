@@ -1,9 +1,11 @@
 import 'package:alzeena/Core/AppColors.dart';
+import 'package:alzeena/Core/Links.dart';
+import 'package:alzeena/Widgets/CategoryCard.dart';
 import 'package:alzeena/Widgets/HomePageCarousel.dart';
 import 'package:alzeena/Widgets/SearchField.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -72,6 +74,31 @@ class _MyHomePageState extends State<MyHomePage> {
                   "Category",
                   style: TextStyle(fontSize: 18),
                 )),
+            const Gap(10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                CategoryCard(
+                  title: 'Mens',
+                  image: mensImage,
+                ),
+                CategoryCard(title: 'Women', image: mensImage),
+                CategoryCard(title: 'Kids', image: mensImage),
+              ],
+            ),
+            const Gap(10),
+            const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Sub-category",
+                  style: TextStyle(fontSize: 18),
+                )),
+            const Gap(10),
+            Row(
+              children: [
+
+              ],
+            )
           ],
         ),
       ),
