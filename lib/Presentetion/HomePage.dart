@@ -1,9 +1,11 @@
 import 'package:alzeena/Core/AppColors.dart';
-import 'package:alzeena/Core/Links.dart';
+import 'package:alzeena/Widgets/BestSellingProdCard.dart';
 import 'package:alzeena/Widgets/Brand.dart';
 import 'package:alzeena/Widgets/CategoryCard.dart';
+import 'package:alzeena/Widgets/FeatureProdCard.dart';
 import 'package:alzeena/Widgets/HomePageCarousel.dart';
 import 'package:alzeena/Widgets/LandscapeProdCard.dart';
+import 'package:alzeena/Widgets/NewCollectionBannar.dart';
 import 'package:alzeena/Widgets/SearchField.dart';
 import 'package:alzeena/Widgets/SubCategoryCard.dart';
 import 'package:alzeena/Widgets/TitleText.dart';
@@ -100,34 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const Divider(),
               const Gap(10),
-              Container(
-                height: 110,
-                // width: ,
-                decoration: BoxDecoration(
-                    color: primaryColor.withOpacity(0.3),
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "New Collection\n is Available",
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
-                          Text('Learn more')
-                        ],
-                      ),
-                      Image(image: AssetImage('assets/kids.jpeg'))
-                    ],
-                  ),
-                ),
-              ),
+              const NewCollectionBannar(),
               const Gap(10),
               TitleText(title: 'Top Brands'),
               const Gap(10),
@@ -165,12 +140,99 @@ class _MyHomePageState extends State<MyHomePage> {
                       regulerPrice: '300 tk',
                       discountPrice: '150 tk',
                       rating: 3,
-
                     ),
                   ],
                 ),
               ),
-              const Gap(100)
+              const Gap(10),
+              const NewCollectionBannar(),
+              const Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TitleText(title: 'Best selling products'),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'View All',
+                      style: TextStyle(
+                        color: primaryColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  BestSellingProdCard(
+                    image: 'assets/hoodie.avif',
+                    title: 'Hoodie',
+                    price: '1200 tk',
+                    availability: '12',
+                  ),
+                  BestSellingProdCard(
+                    image: 'assets/tops.avif',
+                    title: 'Tops',
+                    price: '300 tk',
+                    availability: '234',
+                  ),
+                ],
+              ),
+              const Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TitleText(title: 'Featured Products'),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'View All',
+                      style: TextStyle(
+                        color: primaryColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const Gap(10),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    FeatureProdCard(
+                      image: 'assets/hoodie.avif',
+                      title: 'Hoodie',
+                      price: '12.0',
+                      discountPrice: '45.0',
+                    ),
+                    FeatureProdCard(
+                      image: 'assets/tops.avif',
+                      title: 'Tops',
+                      price: '30.0',
+                      discountPrice: '45.0',
+                    ),
+                    FeatureProdCard(
+                        image: 'assets/jacket.jpeg',
+                        title: 'Jacket',
+                        price: '5.0',
+                        discountPrice: '10.0'),
+                    FeatureProdCard(
+                        image: 'assets/pants.jpeg',
+                        title: 'pants',
+                        price: '5.0',
+                        discountPrice: '10.0'),
+                    FeatureProdCard(
+                        image: 'assets/mens.jpeg',
+                        title: 'Shirt',
+                        price: '5.0',
+                        discountPrice: '10.0'),
+                  ],
+                ),
+              ),
+              const Gap(100),
             ],
           ),
         ),
