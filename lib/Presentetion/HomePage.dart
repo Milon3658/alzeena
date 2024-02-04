@@ -1,4 +1,5 @@
 import 'package:alzeena/Core/AppColors.dart';
+import 'package:alzeena/Widgets/HomePageCarousel.dart';
 import 'package:alzeena/Widgets/SearchField.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -37,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: <Widget>[
             const Searchfield(),
@@ -49,7 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   'Flash sale',
                   style: TextStyle(
                     fontSize: 18,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 TextButton(
@@ -64,6 +64,14 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
             const Gap(10),
+            const HomePageCarousel(),
+            const Gap(10),
+            const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Category",
+                  style: TextStyle(fontSize: 18),
+                )),
           ],
         ),
       ),
