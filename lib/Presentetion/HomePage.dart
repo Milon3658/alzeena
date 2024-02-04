@@ -3,6 +3,7 @@ import 'package:alzeena/Core/Links.dart';
 import 'package:alzeena/Widgets/Brand.dart';
 import 'package:alzeena/Widgets/CategoryCard.dart';
 import 'package:alzeena/Widgets/HomePageCarousel.dart';
+import 'package:alzeena/Widgets/LandscapeProdCard.dart';
 import 'package:alzeena/Widgets/SearchField.dart';
 import 'package:alzeena/Widgets/SubCategoryCard.dart';
 import 'package:alzeena/Widgets/TitleText.dart';
@@ -129,6 +130,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const Gap(10),
               TitleText(title: 'Top Brands'),
+              const Gap(10),
               SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -140,7 +142,35 @@ class _MyHomePageState extends State<MyHomePage> {
                       Brand(image: 'assets/brand.jpg'),
                       Brand(image: 'assets/brand.jpg'),
                     ],
-                  ))
+                  )),
+              const Gap(10),
+              TitleText(title: 'Discount Products'),
+              const Gap(10),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    LandscapeProdCard(
+                      image: 'assets/hoodie.avif',
+                      title: 'Hoodie',
+                      subtitle: 'digital store',
+                      regulerPrice: '1200 tk',
+                      discountPrice: '450 tk',
+                      rating: 3,
+                    ),
+                    LandscapeProdCard(
+                      image: 'assets/tops.avif',
+                      title: 'Tops',
+                      subtitle: 'tops store',
+                      regulerPrice: '300 tk',
+                      discountPrice: '150 tk',
+                      rating: 3,
+
+                    ),
+                  ],
+                ),
+              ),
+              const Gap(100)
             ],
           ),
         ),
